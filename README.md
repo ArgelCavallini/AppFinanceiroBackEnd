@@ -1,3 +1,4 @@
+# AppFinanceiroBackEnd
 # projeto
 yarn
 
@@ -8,4 +9,4 @@ yarn prisma init
 yarn dev
 
 # banco no navegador pelo prisma
-yarn prisma studio# AppFinanceiroBackEnd
+yarn prisma studio
