@@ -3,8 +3,8 @@ import { CreateAccountsReceivableUseCase } from "./CreateAccountsReceivableUseCa
 
 export class CreateAccountsReceivableController {
   async handle(request: Request, response: Response) {
-    const { description, account_value, receiving_date, forecast_receipt_date, id_company} = request.body;
-    const { id_user } = request;
+    const { description, account_value, receiving_date, forecast_receipt_date} = request.body;
+    const { id_user, id_company } = request;
 
     const createAccountsReceivableUseCase = new CreateAccountsReceivableUseCase();
     const result = await createAccountsReceivableUseCase.execute({

@@ -27,8 +27,11 @@ export class AuthenticateUserUseCase {
       throw new Error("Username or password invalid!")
     }
 
+    const id_company = user.id_company;
+    const id_user = user.id;
+
     // Gerar o token
-    const token = sign({ username }, process.env.TOKEN, {
+    const token = sign({ username, id_user, id_company }, process.env.TOKEN, {
       subject: user.id,
       expiresIn: "1d",
     })

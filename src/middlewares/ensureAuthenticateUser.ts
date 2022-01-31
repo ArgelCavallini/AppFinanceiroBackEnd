@@ -2,7 +2,9 @@ import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
 
 interface IPayload {
-  sub: string;
+  username: string;
+  id_user: string;
+  id_company: string;
 }
 
 export async function ensureAuthenticateUser(request: Request, response: Response, next: NextFunction) {
@@ -24,9 +26,11 @@ export async function ensureAuthenticateUser(request: Request, response: Respons
   }
 
   try {
-    const { sub } = verify(token, process.env.TOKEN) as IPayload;
+    const { username, id_user, id_company} = verify(token, process.env.TOKEN) as IPayload;
 
-    request.id_user = sub;
+    request.username = username;
+    request.id_user = id_user;
+    request.id_company = id_company;
 
     return next();
 
