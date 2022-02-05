@@ -17,6 +17,8 @@ model Users {
 
   id_company String?
 
+  ativo Boolean @default(true)
+
   Accounts_payable    Accounts_payable[]
   Accounts_receivable Accounts_receivable[]
   @@map("users")
