@@ -61,11 +61,13 @@ model Accounts_receivable {
 }
 
 model Companies {
-  id   String @id @default(uuid())
-  name String @unique
+  id    String  @id @default(uuid())
+  name  String  @unique
+  ativo Boolean @default(true)
 
   created_at          DateTime              @default(now())
   Accounts_payable    Accounts_payable[]
   Accounts_receivable Accounts_receivable[]
   @@map("companies")
 }
+

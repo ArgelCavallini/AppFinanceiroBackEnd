@@ -11,6 +11,7 @@ import { FindCompanyController } from "./modules/company/findCompany/FindCompany
 import { FindAccountsPayableController } from "./modules/accounts_payable/findAccountsPayable/FindAccountsPayableController";
 import { FindAccountsReceivableController } from "./modules/accounts_receivable/findAccountsReceivable/FindAccountsReceivableController";
 import { FindUserController } from "./modules/user/findUser/FindUserController";
+import { DeleteUserController } from "./modules/user/deleteUser/DeleteUserController";
 
 const routes = Router();
 
@@ -23,11 +24,13 @@ const findCompanyController = new FindCompanyController
 const findAccountsPayableController = new FindAccountsPayableController
 const findAccountsReceivableController = new FindAccountsReceivableController
 const findUserController = new FindUserController
+const deleteUserController = new DeleteUserController
 
 routes.post("/authenticate_user", authenticateUserController.handle);
 
 routes.post("/user", ensureAuthenticateUser, createUserController.handle);
 routes.get("/user", ensureAuthenticateUser, findUserController.handle);
+routes.delete("/user/:id", ensureAuthenticateUser, deleteUserController.handle);
 
 routes.post("/company", ensureAuthenticateUser, createCompanyController.handle);
 routes.get("/company", ensureAuthenticateUser, findCompanyController.handle);
