@@ -1,17 +1,17 @@
 import { Router } from "express";
 
-import { ensureAuthenticateUser } from "./middlewares/ensureAuthenticateUser";
+import { ensureAuthenticateUser } from "../middlewares/ensureAuthenticateUser";
 
-import { AuthenticateUserController } from "./modules/account/authenticateUser/AuthenticateUserController";
-import { CreateAccountsPayableController } from "./modules/accounts_payable/createAccountsPayable/CreateAccountsPayableController";
-import { CreateAccountsReceivableController } from "./modules/accounts_receivable/createAccountsReceivable/createAccountsReceivableController";
-import { CreateCompanyController } from "./modules/company/createCompany/CreateCompanyController";
-import { CreateUserController } from "./modules/user/createUser/CreateUserController";
-import { FindCompanyController } from "./modules/company/findCompany/FindCompanyController";
-import { FindAccountsPayableController } from "./modules/accounts_payable/findAccountsPayable/FindAccountsPayableController";
-import { FindAccountsReceivableController } from "./modules/accounts_receivable/findAccountsReceivable/FindAccountsReceivableController";
-import { FindUserController } from "./modules/user/findUser/FindUserController";
-import { DeleteUserController } from "./modules/user/deleteUser/DeleteUserController";
+import { AuthenticateUserController } from "../modules/useCases/account/authenticateUser/AuthenticateUserController";
+import { CreateAccountsPayableController } from "../modules/useCases/accounts_payable/createAccountsPayable/CreateAccountsPayableController";
+import { CreateAccountsReceivableController } from "../modules/useCases/accounts_receivable/createAccountsReceivable/createAccountsReceivableController";
+import { CreateCompanyController } from "../modules/useCases/company/createCompany/CreateCompanyController";
+import { CreateUserController } from "../modules/useCases/user/createUser/CreateUserController";
+import { FindCompanyController } from "../modules/useCases/company/findCompany/FindCompanyController";
+import { FindAccountsPayableController } from "../modules/useCases/accounts_payable/findAccountsPayable/FindAccountsPayableController";
+import { FindAccountsReceivableController } from "../modules/useCases/accounts_receivable/findAccountsReceivable/FindAccountsReceivableController";
+import { FindUserController } from "../modules/useCases/user/findUser/FindUserController";
+import { DeleteUserController } from "../modules/useCases/user/deleteUser/DeleteUserController";
 
 const routes = Router();
 
